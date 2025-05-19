@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 app.use(cors({
-   origin: 'http://localhost:5173', // or use an array for multiple origins
+   origin: process.env.FRONTEND_URL || 'http://localhost:5173', // or use an array for multiple origins
   credentials: true
 }));
 connectDB();
